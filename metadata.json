@@ -1,0 +1,6 @@
+{
+  "name": "NexCart",
+  "description": "A premium full-stack multi-vendor eCommerce platform inspired by Flipkart and Meesho, featuring real-time tracking, secure payments, and a powerful admin/seller dashboard.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["fullstack", "ecommerce", "multi-vendor"]
+}
