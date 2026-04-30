@@ -25,6 +25,7 @@ export function Checkout() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -38,7 +39,75 @@ export function Checkout() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
+    // For phone, only allow digits and limit to 10
+    if (name === "phone") {
+      const onlyNums = value.replace(/\D/g, "");
+      if (onlyNums.length <= 10) {
+        setFormData(prev => ({ ...prev, [name]: onlyNums }));
+      }
+      return;
+    }
+
+    // For pincode, only allow digits and limit to 6
+    if (name === "pincode") {
+      const onlyNums = value.replace(/\D/g, "");
+      if (onlyNums.length <= 6) {
+        setFormData(prev => ({ ...prev, [name]: onlyNums }));
+      }
+      return;
+    }
+
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
+  };
+
+  const validateEmail = (email: string) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const handleContinueToPayment = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.firstName.trim()) newErrors.firstName = "Required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Required";
+    
+    // Phone validation: must be exactly 10 digits
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Required";
+    } else if (formData.phone.length !== 10) {
+      newErrors.phone = "Must be exactly 10 digits";
+    }
+
+    if (!formData.address.trim()) newErrors.address = "Required";
+    if (!formData.city.trim()) newErrors.city = "Required";
+    
+    // Pincode validation: must be exactly 6 digits
+    if (!formData.pincode.trim()) {
+      newErrors.pincode = "Required";
+    } else if (formData.pincode.length !== 6) {
+      newErrors.pincode = "Must be exactly 6 digits";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Invalid email format (e.g. name@gmail.com)";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setErrors({});
+    setStep(2);
   };
 
   const { subtotal, shippingCharge, tax, total } = useMemo(() => {
@@ -166,10 +235,14 @@ export function Checkout() {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.firstName && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="John" 
                       required
                     />
+                    {errors.firstName && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.firstName}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Last Name</label>
@@ -178,10 +251,14 @@ export function Checkout() {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.lastName && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="Doe" 
                       required
                     />
+                    {errors.lastName && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.lastName}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Email Address</label>
@@ -190,10 +267,14 @@ export function Checkout() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.email && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="john.doe@example.com" 
                       required
                     />
+                    {errors.email && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.email}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Phone Number</label>
@@ -202,10 +283,14 @@ export function Checkout() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.phone && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="+91 9876543210" 
                       required
                     />
+                    {errors.phone && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.phone}</p>}
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Detailed Address (House No, Street, Landmark)</label>
@@ -213,11 +298,15 @@ export function Checkout() {
                       name="address"
                       value={formData.address}
                       onChange={handleInputChange}
-                      className="w-full rounded-xl border-2 bg-neutral-50 p-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "w-full rounded-xl border-2 bg-neutral-50 p-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.address && "border-red-500 bg-red-50"
+                      )} 
                       rows={3} 
                       placeholder="House No. 123, Green Valley, Silicon City..." 
                       required
                     />
+                    {errors.address && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.address}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">City</label>
@@ -226,10 +315,14 @@ export function Checkout() {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.city && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="Bangalore" 
                       required
                     />
+                    {errors.city && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.city}</p>}
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Pincode</label>
@@ -238,13 +331,17 @@ export function Checkout() {
                       name="pincode"
                       value={formData.pincode}
                       onChange={handleInputChange}
-                      className="h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white" 
+                      className={cn(
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        errors.pincode && "border-red-500 bg-red-50"
+                      )} 
                       placeholder="560001" 
                       required
                     />
+                    {errors.pincode && <p className="text-[10px] font-bold text-red-500 uppercase">{errors.pincode}</p>}
                   </div>
                 </form>
-                <Button size="lg" className="mt-12 h-14 w-full md:w-fit px-12 text-lg" onClick={() => setStep(2)}>
+                <Button size="lg" className="mt-12 h-14 w-full md:w-fit px-12 text-lg" onClick={handleContinueToPayment}>
                   Continue to Payment
                 </Button>
               </div>

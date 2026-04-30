@@ -71,7 +71,7 @@ export function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
                   <Mail size={18} />
                 </div>
-                <span className="tracking-tight">support@nexcart.in</span>
+                <a href="mailto:nexcart.ofc@gmail.com" className="tracking-tight hover:text-blue-600 transition-colors">nexcart.ofc@gmail.com</a>
               </li>
               <li className="flex items-center gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
