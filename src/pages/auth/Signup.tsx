@@ -50,7 +50,7 @@ export function Signup() {
         <div className="hidden bg-neutral-900 p-12 text-white md:flex md:flex-col md:justify-between">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
                 <ShoppingCart size={20} />
               </div>
               <span className="text-2xl font-black">Nexcart</span>
