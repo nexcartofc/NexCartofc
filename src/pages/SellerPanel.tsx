@@ -58,7 +58,7 @@ export function SellerPanel() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-black text-neutral-900 uppercase">Seller Center</h1>
-            <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Grow your business with NexCart</p>
+            <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Grow your business with Nexcart</p>
           </div>
           <Button className="bg-orange-600 hover:bg-orange-700 shadow-orange-100">
             <Plus size={18} className="mr-2" /> List New Product

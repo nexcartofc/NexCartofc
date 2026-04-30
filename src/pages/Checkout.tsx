@@ -186,7 +186,7 @@ export function Checkout() {
         </div>
         <h1 className="mb-4 text-4xl font-black text-neutral-900">ORDER PLACED!</h1>
         <p className="mb-8 max-w-sm text-neutral-500 font-medium text-lg">
-          Thank you for shopping with NexCart. Your order has been placed successfully and is being processed.
+          Thank you for shopping with Nexcart. Your order has been placed successfully and is being processed.
         </p>
         <div className="flex flex-col gap-4 w-full max-w-xs">
           <Button size="lg" className="h-14 text-lg">Track Order</Button>

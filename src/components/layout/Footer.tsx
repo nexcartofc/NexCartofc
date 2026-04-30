@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ShoppingCart } from "lucide-react";
 import { APP_NAME } from "../../constants";
 
 export function Footer() {
@@ -9,9 +9,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-8">
-            <Link to="/" className="flex items-center">
-              <h1 className="text-3xl font-black tracking-tighter text-blue-600">
-                NEX<span className="text-slate-900">CART</span>
+            <Link to="/" className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
+                <ShoppingCart size={22} />
+              </div>
+              <h1 className="text-2xl font-black tracking-tighter text-slate-900">
+                Nex<span className="text-blue-600">cart</span>
               </h1>
             </Link>
             <p className="max-w-xs text-sm font-medium leading-relaxed text-slate-500">

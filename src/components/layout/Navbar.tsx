@@ -45,9 +45,13 @@ export function Navbar() {
       <div className="mx-auto px-4 md:px-8">
         <div className="flex h-20 items-center justify-between gap-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <h1 className="text-3xl font-black tracking-tighter text-blue-600">
-              NEX<span className="text-slate-900">CART</span>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-200">
+              <ShoppingCart size={22} className="relative z-10" />
+              <div className="absolute -left-1 -top-1 h-3 w-3 rounded-full bg-blue-400 animate-pulse" />
+            </div>
+            <h1 className="text-2xl font-black tracking-tighter text-slate-900">
+              Nex<span className="text-blue-600">cart</span>
             </h1>
           </Link>
 

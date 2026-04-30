@@ -81,7 +81,7 @@ export function Cart() {
                   <div className="flex justify-between gap-4">
                     <div>
                       <h3 className="font-bold text-neutral-900 md:text-lg line-clamp-1">{item.details.name}</h3>
-                      <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">Sold by NexCart Official</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">Sold by Nexcart Official</p>
                     </div>
                     <button 
                       onClick={() => removeFromCart(item.productId)}

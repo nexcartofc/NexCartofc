@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Mail, Lock, User, UserPlus, ArrowRight, ShieldCheck } from "lucide-react";
+import { Mail, Lock, User, UserPlus, ArrowRight, ShieldCheck, ShoppingCart } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../../services/firebase";
@@ -50,8 +50,10 @@ export function Signup() {
         <div className="hidden bg-neutral-900 p-12 text-white md:flex md:flex-col md:justify-between">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black">N</div>
-              <span className="text-2xl font-black">NexCart</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black">
+                <ShoppingCart size={20} />
+              </div>
+              <span className="text-2xl font-black">Nexcart</span>
             </Link>
             <h2 className="text-4xl font-black leading-tight mt-12">
               START YOUR <br /> PREMIER SHOPPING <br /> JOURNEY TODAY.
@@ -66,7 +68,7 @@ export function Signup() {
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-bold">Buyer Protection</p>
-                  <p className="text-xs text-neutral-400 mt-1">Every transaction is secured and guaranteed by NexCart.</p>
+                  <p className="text-xs text-neutral-400 mt-1">Every transaction is secured and guaranteed by Nexcart.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -95,7 +97,7 @@ export function Signup() {
           >
             <div>
               <h1 className="text-3xl font-black text-neutral-900">Create Account</h1>
-              <p className="mt-2 text-sm font-bold text-neutral-400 uppercase tracking-widest">Join the NexCart family</p>
+              <p className="mt-2 text-sm font-bold text-neutral-400 uppercase tracking-widest">Join the Nexcart family</p>
             </div>
 
             {error && (

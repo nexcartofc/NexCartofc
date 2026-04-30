@@ -20,5 +20,5 @@ export const CATEGORIES = [
   { id: "grocery", name: "Grocery", icon: ChefHat },
 ];
 
-export const APP_NAME = "NexCart";
+export const APP_NAME = "Nexcart";
 export * from "./products";

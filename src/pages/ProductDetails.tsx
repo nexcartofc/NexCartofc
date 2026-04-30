@@ -199,7 +199,7 @@ export function ProductDetails() {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-neutral-400">Sold by</p>
-                <p className="font-black text-neutral-900">{product.sellerName || "NexCart Trusted Seller"}</p>
+                <p className="font-black text-neutral-900">{product.sellerName || "Nexcart Trusted Seller"}</p>
               </div>
             </div>
             <Button variant="outline" size="sm">Visit Store</Button>

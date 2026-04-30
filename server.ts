@@ -15,7 +15,7 @@ async function startServer() {
 
   // API routes
   app.get("/api/health", (req, res) => {
-    res.json({ status: "ok", brand: "NexCart" });
+    res.json({ status: "ok", brand: "Nexcart" });
   });
 
   // Vite middleware for development
@@ -34,7 +34,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`NexCart Server running on http://localhost:${PORT}`);
+    console.log(`Nexcart Server running on http://localhost:${PORT}`);
   });
 }
 

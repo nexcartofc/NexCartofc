@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Mail, Lock, LogIn, ArrowRight, Github } from "lucide-react";
+import { Mail, Lock, LogIn, ArrowRight, Github, ShoppingCart } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../../services/firebase";
@@ -44,8 +44,10 @@ export function Login() {
         <div className="hidden bg-blue-600 p-12 text-white md:flex md:flex-col md:justify-between">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600 font-black">N</div>
-              <span className="text-2xl font-black">NexCart</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600 font-black">
+                <ShoppingCart size={20} />
+              </div>
+              <span className="text-2xl font-black">Nexcart</span>
             </Link>
             <h2 className="text-4xl font-black leading-tight mt-12">
               JOIN THE <br /> REVOLUTION OF <br /> SHOPPING.
