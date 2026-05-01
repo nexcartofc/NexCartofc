@@ -31,7 +31,7 @@ export function Cart() {
   if (items.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center p-8 text-center bg-white rounded-[40px] border">
-        <div className="mb-6 rounded-full bg-blue-50 p-8 text-blue-600">
+        <div className="mb-6 rounded-full bg-pink-50 p-8 text-pink-600">
           <ShoppingBag size={64} />
         </div>
         <h2 className="mb-2 text-3xl font-black text-neutral-900">Your cart is empty</h2>
@@ -139,7 +139,7 @@ export function Cart() {
             </div>
             <div className="border-t pt-4 flex justify-between text-xl font-black text-neutral-900">
               <span>Total Pay</span>
-              <span className="text-blue-600">{formatCurrency(total)}</span>
+              <span className="text-pink-600">{formatCurrency(total)}</span>
             </div>
           </div>
 

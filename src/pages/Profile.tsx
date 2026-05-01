@@ -25,7 +25,7 @@ export function Profile() {
             <div className="h-32 w-32 rounded-full border-4 border-white/20 overflow-hidden bg-neutral-100">
               <img src="https://picsum.photos/seed/user/200/200" alt="" className="h-full w-full object-cover" />
             </div>
-            <button className="absolute bottom-0 right-0 h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center border-4 border-neutral-900 text-white hover:bg-blue-700 transition-colors">
+            <button className="absolute bottom-0 right-0 h-10 w-10 rounded-full bg-pink-600 flex items-center justify-center border-4 border-neutral-900 text-white hover:bg-pink-700 transition-colors">
               <Camera size={16} />
             </button>
           </div>
@@ -40,7 +40,7 @@ export function Profile() {
               </p>
             </div>
             <div className="pt-4 flex gap-3 justify-center md:justify-start">
-              <div className="rounded-lg bg-blue-600/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-blue-400 border border-blue-600/30">
+              <div className="rounded-lg bg-pink-600/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-pink-400 border border-pink-600/30">
                 Gold Member
               </div>
               <div className="rounded-lg bg-green-600/20 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-green-400 border border-green-600/30">
@@ -57,7 +57,7 @@ export function Profile() {
       <div className="grid gap-8 md:grid-cols-3">
         {/* Menu Cards */}
         {[
-          { label: "My Orders", icon: Package, link: "/orders", color: "bg-blue-50 text-blue-600" },
+          { label: "My Orders", icon: Package, link: "/orders", color: "bg-pink-50 text-pink-600" },
           { label: "My Wishlist", icon: Heart, link: "/wishlist", color: "bg-red-50 text-red-600" },
           { label: "Settings", icon: Settings, link: "#", color: "bg-neutral-100 text-neutral-600" },
         ].map((item, idx) => (
@@ -84,21 +84,21 @@ export function Profile() {
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Full Name</p>
                 <p className="font-bold text-neutral-900">{profile?.fullName}</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
             <div className="group flex items-center justify-between cursor-pointer">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Email Address</p>
                 <p className="font-bold text-neutral-900">{user?.email}</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
             <div className="group flex items-center justify-between cursor-pointer">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Phone Number</p>
                 <p className="font-bold text-neutral-900">+91 91234 56789</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
           </div>
           <div className="space-y-8">
@@ -107,21 +107,21 @@ export function Profile() {
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Manage Addresses</p>
                 <p className="font-bold text-neutral-900">2 Saved Addresses</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
             <div className="group flex items-center justify-between cursor-pointer">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Stored Cards</p>
                 <p className="font-bold text-neutral-900">Visa ending in 4242</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
             <div className="group flex items-center justify-between cursor-pointer">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">Notification Preferences</p>
                 <p className="font-bold text-neutral-900">Email & Push Active</p>
               </div>
-              <ChevronRight size={18} className="text-neutral-300 group-hover:text-blue-600 transition-colors" />
+              <ChevronRight size={18} className="text-neutral-300 group-hover:text-pink-600 transition-colors" />
             </div>
           </div>
         </div>

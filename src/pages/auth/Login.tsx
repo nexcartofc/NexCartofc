@@ -41,10 +41,10 @@ export function Login() {
     <div className="flex min-h-[80vh] items-center justify-center p-4">
       <div className="grid w-full max-w-5xl overflow-hidden rounded-[40px] border bg-white shadow-2xl md:grid-cols-2">
         {/* Left Side - Visual */}
-        <div className="hidden bg-blue-600 p-12 text-white md:flex md:flex-col md:justify-between">
+        <div className="hidden bg-pink-600 p-12 text-white md:flex md:flex-col md:justify-between">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-pink-600">
                 <ShoppingCart size={20} />
               </div>
               <span className="text-2xl font-black">Nexcart</span>
@@ -52,18 +52,18 @@ export function Login() {
             <h2 className="text-4xl font-black leading-tight mt-12">
               JOIN THE <br /> REVOLUTION OF <br /> SHOPPING.
             </h2>
-            <p className="max-w-xs text-blue-100 font-medium opacity-80">
+            <p className="max-w-xs text-pink-100 font-medium opacity-80">
               Unlock exclusive deals, track your orders in real-time, and get personalized recommendations just for you.
             </p>
           </div>
           <div className="space-y-6">
-            <div className="flex items-center gap-4 py-6 border-t border-blue-500/50">
+            <div className="flex items-center gap-4 py-6 border-t border-pink-500/50">
               <div className="h-12 w-12 rounded-full border-2 border-white/20 overflow-hidden bg-neutral-100">
                 <img src="https://picsum.photos/seed/user1/100/100" alt="" referrerPolicy="no-referrer" />
               </div>
               <p className="text-sm font-bold italic">"Best shopping experience I've had in years! Fast delivery and premium quality."</p>
             </div>
-            <p className="text-[10px] uppercase tracking-widest font-black text-blue-200">© 2026 NEXCART INDIA PVT LTD</p>
+            <p className="text-[10px] uppercase tracking-widest font-black text-pink-200">© 2026 NEXCART INDIA PVT LTD</p>
           </div>
         </div>
 
@@ -92,7 +92,7 @@ export function Login() {
                   <input
                     type="email"
                     required
-                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-blue-600 focus:bg-white focus:outline-none"
+                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-pink-600 focus:bg-white focus:outline-none"
                     placeholder="name@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -106,7 +106,7 @@ export function Login() {
                   <input
                     type="password"
                     required
-                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-blue-600 focus:bg-white focus:outline-none"
+                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-pink-600 focus:bg-white focus:outline-none"
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -115,7 +115,7 @@ export function Login() {
                 </div>
               </div>
               <div className="flex justify-end">
-                <a href="#" className="text-xs font-bold text-blue-600 hover:underline">Forgot Password?</a>
+                <a href="#" className="text-xs font-bold text-pink-600 hover:underline">Forgot Password?</a>
               </div>
               <Button type="submit" isLoading={isLoading} className="w-full h-12 text-lg">
                 Login <LogIn size={20} className="ml-2" />
@@ -144,7 +144,7 @@ export function Login() {
 
             <p className="text-center text-sm font-bold text-neutral-500">
               Don't have an account?{" "}
-              <Link to="/signup" className="text-blue-600 hover:underline">Create Account</Link>
+              <Link to="/signup" className="text-pink-600 hover:underline">Create Account</Link>
             </p>
           </motion.div>
         </div>

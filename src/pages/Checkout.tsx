@@ -201,15 +201,15 @@ export function Checkout() {
       {/* Checkout Sidebar Stats */}
       <div className="lg:col-span-2 space-y-8">
         <div className="flex items-center gap-4 mb-2 overflow-x-auto pb-4 scrollbar-hide">
-          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 1 ? "bg-blue-600 text-white" : "bg-neutral-100 text-neutral-400")}>
+          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 1 ? "bg-pink-600 text-white" : "bg-neutral-100 text-neutral-400")}>
             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">1</div> Shipping
           </div>
           <ChevronRight className="flex-shrink-0 text-neutral-300" size={18} />
-          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 2 ? "bg-blue-600 text-white" : "bg-neutral-100 text-neutral-400")}>
+          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 2 ? "bg-pink-600 text-white" : "bg-neutral-100 text-neutral-400")}>
             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">2</div> Payment
           </div>
           <ChevronRight className="flex-shrink-0 text-neutral-300" size={18} />
-          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 3 ? "bg-blue-600 text-white" : "bg-neutral-100 text-neutral-400")}>
+          <div className={cn("flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-bold", step >= 3 ? "bg-pink-600 text-white" : "bg-neutral-100 text-neutral-400")}>
             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">3</div> Review
           </div>
         </div>
@@ -225,7 +225,7 @@ export function Checkout() {
             >
               <div className="rounded-[40px] border bg-white p-8 md:p-12">
                 <h2 className="mb-8 text-2xl font-black text-neutral-900 flex items-center gap-3">
-                  <MapPin className="text-blue-600" /> Shipping Address
+                  <MapPin className="text-pink-600" /> Shipping Address
                 </h2>
                 <form className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
@@ -236,7 +236,7 @@ export function Checkout() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.firstName && "border-red-500 bg-red-50"
                       )} 
                       placeholder="John" 
@@ -252,7 +252,7 @@ export function Checkout() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.lastName && "border-red-500 bg-red-50"
                       )} 
                       placeholder="Doe" 
@@ -268,7 +268,7 @@ export function Checkout() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.email && "border-red-500 bg-red-50"
                       )} 
                       placeholder="john.doe@example.com" 
@@ -284,7 +284,7 @@ export function Checkout() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.phone && "border-red-500 bg-red-50"
                       )} 
                       placeholder="+91 9876543210" 
@@ -299,7 +299,7 @@ export function Checkout() {
                       value={formData.address}
                       onChange={handleInputChange}
                       className={cn(
-                        "w-full rounded-xl border-2 bg-neutral-50 p-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "w-full rounded-xl border-2 bg-neutral-50 p-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.address && "border-red-500 bg-red-50"
                       )} 
                       rows={3} 
@@ -316,7 +316,7 @@ export function Checkout() {
                       value={formData.city}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.city && "border-red-500 bg-red-50"
                       )} 
                       placeholder="Bangalore" 
@@ -332,7 +332,7 @@ export function Checkout() {
                       value={formData.pincode}
                       onChange={handleInputChange}
                       className={cn(
-                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-blue-600 focus:bg-white",
+                        "h-12 w-full rounded-xl border-2 bg-neutral-50 px-4 font-bold outline-none focus:border-pink-600 focus:bg-white",
                         errors.pincode && "border-red-500 bg-red-50"
                       )} 
                       placeholder="560001" 
@@ -358,7 +358,7 @@ export function Checkout() {
             >
               <div className="rounded-[40px] border bg-white p-8 md:p-12">
                 <h2 className="mb-8 text-2xl font-black text-neutral-900 flex items-center gap-3">
-                  <CreditCard className="text-blue-600" /> Payment Method
+                  <CreditCard className="text-pink-600" /> Payment Method
                 </h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
@@ -370,10 +370,10 @@ export function Checkout() {
                       onClick={() => setPaymentMethod(method.id)}
                       className={cn(
                         "flex items-center gap-4 rounded-3xl border-2 p-6 transition-all text-left",
-                        paymentMethod === method.id ? "border-blue-600 bg-blue-50/50" : "border-neutral-100 hover:border-blue-200 bg-neutral-50/50"
+                        paymentMethod === method.id ? "border-pink-600 bg-pink-50/50" : "border-neutral-100 hover:border-pink-200 bg-neutral-50/50"
                       )}
                     >
-                      <div className={cn("flex h-12 w-12 items-center justify-center rounded-2xl", paymentMethod === method.id ? "bg-blue-600 text-white" : "bg-white text-neutral-600")}>
+                      <div className={cn("flex h-12 w-12 items-center justify-center rounded-2xl", paymentMethod === method.id ? "bg-pink-600 text-white" : "bg-white text-neutral-600")}>
                         <method.icon size={24} />
                       </div>
                       <span className="font-bold text-neutral-900">{method.label}</span>
@@ -403,18 +403,18 @@ export function Checkout() {
                 <div className="space-y-6">
                   <div className="rounded-3xl bg-neutral-50 p-6 flex justify-between items-center">
                     <div className="flex items-start gap-4">
-                      <MapPin className="mt-1 text-blue-600" size={20} />
+                      <MapPin className="mt-1 text-pink-600" size={20} />
                       <div>
                         <p className="text-xs font-black uppercase text-neutral-400">Shipping to</p>
                         <p className="font-bold text-neutral-900">{formData.firstName} {formData.lastName}, {formData.phone}</p>
                         <p className="truncate max-w-xs text-sm text-neutral-500 font-medium">{formData.address}, {formData.city}, {formData.pincode}</p>
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm" className="text-blue-600" onClick={() => setStep(1)}>Change</Button>
+                    <Button variant="ghost" size="sm" className="text-pink-600" onClick={() => setStep(1)}>Change</Button>
                   </div>
                   <div className="rounded-3xl bg-neutral-50 p-6 flex justify-between items-center">
                     <div className="flex items-start gap-4">
-                      <CreditCard className="mt-1 text-blue-600" size={20} />
+                      <CreditCard className="mt-1 text-pink-600" size={20} />
                       <div>
                         <p className="text-xs font-black uppercase text-neutral-400">Payment via</p>
                         <p className="font-bold text-neutral-900">
@@ -422,7 +422,7 @@ export function Checkout() {
                         </p>
                       </div>
                     </div>
-                    <Button variant="ghost" size="sm" className="text-blue-600" onClick={() => setStep(2)}>Change</Button>
+                    <Button variant="ghost" size="sm" className="text-pink-600" onClick={() => setStep(2)}>Change</Button>
                   </div>
                 </div>
                 <div className="mt-12 flex gap-4">
@@ -463,7 +463,7 @@ export function Checkout() {
             </div>
             <div className="flex justify-between border-t border-dashed pt-4 text-xl font-black text-neutral-900">
               <span>Total Amount</span>
-              <span className="text-blue-600">{formatCurrency(total)}</span>
+              <span className="text-pink-600">{formatCurrency(total)}</span>
             </div>
           </div>
           <div className="mt-8 flex items-center gap-3 rounded-2xl bg-green-50 p-4 text-green-700">

@@ -33,25 +33,25 @@ export function AdminDashboard() {
         <h3 className="px-4 py-2 text-[10px] font-black uppercase tracking-widest text-neutral-400">Admin Menu</h3>
         <button 
           onClick={() => setActiveTab("overview")}
-          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "overview" ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "text-neutral-600 hover:bg-neutral-50"}`}
+          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "overview" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "text-neutral-600 hover:bg-neutral-50"}`}
         >
           <BarChart3 size={18} /> Overview
         </button>
         <button 
           onClick={() => setActiveTab("products")}
-          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "products" ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "text-neutral-600 hover:bg-neutral-50"}`}
+          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "products" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "text-neutral-600 hover:bg-neutral-50"}`}
         >
           <Package size={18} /> Products
         </button>
         <button 
           onClick={() => setActiveTab("orders")}
-          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "orders" ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "text-neutral-600 hover:bg-neutral-50"}`}
+          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "orders" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "text-neutral-600 hover:bg-neutral-50"}`}
         >
           <ShoppingCart size={18} /> Orders
         </button>
         <button 
           onClick={() => setActiveTab("users")}
-          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "users" ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "text-neutral-600 hover:bg-neutral-50"}`}
+          className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-bold transition-all ${activeTab === "users" ? "bg-pink-600 text-white shadow-lg shadow-pink-200" : "text-neutral-600 hover:bg-neutral-50"}`}
         >
           <Users size={18} /> Customers
         </button>
@@ -126,7 +126,7 @@ export function AdminDashboard() {
                 {[1, 2, 3, 4, 5].map((item) => (
                   <tr key={item} className="hover:bg-neutral-50 transition-colors">
                     <td className="p-6">
-                      <span className="font-bold text-blue-600">#ORD-2026-00{item}</span>
+                      <span className="font-bold text-pink-600">#ORD-2026-00{item}</span>
                     </td>
                     <td className="p-6">
                       <div className="flex items-center gap-3">
@@ -152,7 +152,7 @@ export function AdminDashboard() {
             </table>
           </div>
           <div className="p-6 border-t bg-neutral-50/50 flex justify-center">
-            <Button variant="ghost" className="text-xs font-bold text-blue-600 uppercase tracking-widest">View All Transactions</Button>
+            <Button variant="ghost" className="text-xs font-bold text-pink-600 uppercase tracking-widest">View All Transactions</Button>
           </div>
         </section>
       </main>

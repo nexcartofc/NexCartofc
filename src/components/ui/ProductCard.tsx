@@ -59,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
         {product.isNew && (
-          <div className="absolute left-3 bottom-3 rounded-lg bg-blue-600 px-3 py-1 text-[10px] font-black text-white uppercase tracking-tighter shadow-sm z-10 animate-in fade-in zoom-in duration-500">
+          <div className="absolute left-3 bottom-3 rounded-lg bg-pink-600 px-3 py-1 text-[10px] font-black text-white uppercase tracking-tighter shadow-sm z-10 animate-in fade-in zoom-in duration-500">
             NEW
           </div>
         )}
@@ -81,7 +81,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </span>
         <Link 
           to={`/product/${product.id}`}
-          className="text-sm font-bold text-slate-900 transition-colors hover:text-blue-600 line-clamp-2 leading-tight"
+          className="text-sm font-bold text-slate-900 transition-colors hover:text-pink-600 line-clamp-2 leading-tight"
         >
           {product.name}
         </Link>
@@ -108,7 +108,7 @@ export function ProductCard({ product }: ProductCardProps) {
             size="sm" 
             className={cn(
               "h-10 rounded-xl px-3 transition-all active:scale-90",
-              isAdded ? "bg-green-600 w-auto" : "bg-slate-900 w-10 p-0 hover:bg-blue-600 shadow-lg shadow-slate-200"
+              isAdded ? "bg-green-600 w-auto" : "bg-slate-900 w-10 p-0 hover:bg-pink-600 shadow-lg shadow-slate-200"
             )}
             variant="primary"
             onClick={handleAddToCart}

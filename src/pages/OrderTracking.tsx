@@ -46,7 +46,7 @@ export function OrderTracking() {
             <div className="mb-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-1">
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Order ID</p>
-                <p className="text-lg font-black text-blue-600">#{order.id}</p>
+                <p className="text-lg font-black text-pink-600">#{order.id}</p>
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] font-black uppercase tracking-widest text-neutral-400">Date Placed</p>
@@ -69,7 +69,7 @@ export function OrderTracking() {
             {/* Tracking Visualizer */}
             <div className="relative mb-12">
               <div className="absolute top-5 left-8 right-8 h-1 bg-neutral-100" />
-              <div className="absolute top-5 left-8 w-[66%] h-1 bg-blue-600" /> {/* Progressive based on status */}
+              <div className="absolute top-5 left-8 w-[66%] h-1 bg-pink-600" /> {/* Progressive based on status */}
               
               <div className="relative flex justify-between">
                 {[
@@ -81,8 +81,8 @@ export function OrderTracking() {
                   <div key={idx} className="flex flex-col items-center gap-4 bg-white px-2">
                     <div className={cn(
                       "flex h-12 w-12 items-center justify-center rounded-2xl border-4 transition-all",
-                      step.status === "completed" ? "bg-blue-600 border-blue-50 text-white" : 
-                      step.status === "active" ? "bg-white border-blue-600 text-blue-600" : "bg-white border-neutral-100 text-neutral-300"
+                      step.status === "completed" ? "bg-pink-600 border-pink-50 text-white" : 
+                      step.status === "active" ? "bg-white border-pink-600 text-pink-600" : "bg-white border-neutral-100 text-neutral-300"
                     )}>
                       <step.icon size={24} />
                     </div>
@@ -125,7 +125,7 @@ export function OrderTracking() {
           <p className="max-w-md text-neutral-400 font-medium font-lg">
             Our 24/7 support team is here to help you with anything from tracking your items to handling returns.
           </p>
-          <Button size="lg" className="h-14 px-12 text-lg bg-blue-600 hover:bg-blue-700">
+          <Button size="lg" className="h-14 px-12 text-lg bg-pink-600 hover:bg-pink-700">
             Contact Support
           </Button>
         </div>

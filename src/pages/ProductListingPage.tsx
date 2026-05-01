@@ -51,7 +51,7 @@ export function ProductListingPage() {
           <div className="flex items-center gap-2 mt-4">
             <Link to="/" className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] hover:text-white transition-colors">Home</Link>
             <span className="text-[10px] font-black text-slate-600">/</span>
-            <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em]">{title}</span>
+            <span className="text-[10px] font-black text-pink-400 uppercase tracking-[0.2em]">{title}</span>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export function ProductListingPage() {
               <div>
                 <p className="mb-4 text-[10px] font-black uppercase tracking-widest text-slate-400">Sort By</p>
                 <div className="relative">
-                  <select className="w-full h-12 bg-slate-50 border-none rounded-xl px-4 text-sm font-bold appearance-none cursor-pointer focus:ring-2 focus:ring-blue-500 outline-none">
+                  <select className="w-full h-12 bg-slate-50 border-none rounded-xl px-4 text-sm font-bold appearance-none cursor-pointer focus:ring-2 focus:ring-pink-500 outline-none">
                     <option>Recommended</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -81,7 +81,7 @@ export function ProductListingPage() {
                   {["Under ₹1,000", "₹1,000 - ₹5,000", "₹5,000 - ₹20,000", "Over ₹20,000"].map((range) => (
                     <label key={range} className="flex items-center gap-3 text-sm font-bold text-slate-600 cursor-pointer group">
                       <div className="relative flex items-center justify-center">
-                        <input type="checkbox" className="peer appearance-none h-5 w-5 bg-slate-100 border-none rounded-md checked:bg-blue-600 transition-all cursor-pointer" />
+                        <input type="checkbox" className="peer appearance-none h-5 w-5 bg-slate-100 border-none rounded-md checked:bg-pink-600 transition-all cursor-pointer" />
                         <div className="absolute opacity-0 peer-checked:opacity-100 text-white pointer-events-none">✓</div>
                       </div>
                       <span className="group-hover:text-slate-900 transition-colors uppercase tracking-tight text-xs">{range}</span>
@@ -94,7 +94,7 @@ export function ProductListingPage() {
                 <p className="mb-4 text-[10px] font-black uppercase tracking-widest text-slate-400">Availability</p>
                 <label className="flex items-center gap-3 text-sm font-bold text-slate-600 cursor-pointer group">
                   <div className="relative flex items-center justify-center">
-                    <input type="checkbox" className="peer appearance-none h-5 w-5 bg-slate-100 border-none rounded-md checked:bg-blue-600 transition-all cursor-pointer" />
+                    <input type="checkbox" className="peer appearance-none h-5 w-5 bg-slate-100 border-none rounded-md checked:bg-pink-600 transition-all cursor-pointer" />
                     <div className="absolute opacity-0 peer-checked:opacity-100 text-white pointer-events-none">✓</div>
                   </div>
                   <span className="group-hover:text-slate-900 transition-colors uppercase tracking-tight text-xs">Exlude Out of Stock</span>
@@ -102,14 +102,14 @@ export function ProductListingPage() {
               </div>
             </div>
           </div>
-          <Button className="w-full h-14 rounded-2xl bg-slate-900 text-white font-black uppercase tracking-widest text-[11px] hover:bg-blue-600 shadow-xl shadow-slate-200 transition-all">Apply Filters</Button>
+          <Button className="w-full h-14 rounded-2xl bg-slate-900 text-white font-black uppercase tracking-widest text-[11px] hover:bg-pink-600 shadow-xl shadow-slate-200 transition-all">Apply Filters</Button>
         </aside>
 
         {/* Content */}
         <div className="flex-1 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="h-2 w-2 rounded-full bg-blue-600" />
+              <div className="h-2 w-2 rounded-full bg-pink-600" />
               <p className="text-xs font-black uppercase tracking-widest text-slate-400">
                 Found <span className="text-slate-900 italic">{products.length} Products</span> in this collection
               </p>

@@ -15,10 +15,10 @@ export function CategoryPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="relative h-48 overflow-hidden rounded-[40px] bg-blue-600 p-8 md:h-64 md:p-12">
+      <div className="relative h-48 overflow-hidden rounded-[40px] bg-pink-600 p-8 md:h-64 md:p-12">
         <div className="relative z-10 flex h-full flex-col justify-end">
           <h1 className="text-4xl font-black text-white md:text-6xl uppercase">{category.name}</h1>
-          <p className="mt-2 text-sm font-bold text-blue-100 uppercase tracking-widest">
+          <p className="mt-2 text-sm font-bold text-pink-100 uppercase tracking-widest">
             Home / {category.name}
           </p>
         </div>
@@ -37,15 +37,15 @@ export function CategoryPage() {
                 <p className="mb-3 text-[10px] font-black uppercase tracking-widest text-neutral-400">Price Range</p>
                 <div className="space-y-2">
                   <label className="flex items-center gap-2 text-sm font-bold text-neutral-600">
-                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-blue-600" />
+                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-pink-600" />
                     Under ₹10,000
                   </label>
                   <label className="flex items-center gap-2 text-sm font-bold text-neutral-600">
-                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-blue-600" />
+                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-pink-600" />
                     ₹10,000 - ₹50,000
                   </label>
                   <label className="flex items-center gap-2 text-sm font-bold text-neutral-600">
-                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-blue-600" />
+                    <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-pink-600" />
                     Over ₹50,000
                   </label>
                 </div>
@@ -55,7 +55,7 @@ export function CategoryPage() {
                 <div className="space-y-2">
                   {[4, 3, 2].map(r => (
                     <label key={r} className="flex items-center gap-2 text-sm font-bold text-neutral-600">
-                      <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-blue-600" />
+                      <input type="checkbox" className="h-4 w-4 rounded border-neutral-300 text-pink-600" />
                       {r}+ Stars
                     </label>
                   ))}

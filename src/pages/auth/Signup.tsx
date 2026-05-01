@@ -50,7 +50,7 @@ export function Signup() {
         <div className="hidden bg-neutral-900 p-12 text-white md:flex md:flex-col md:justify-between">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-600 text-white">
                 <ShoppingCart size={20} />
               </div>
               <span className="text-2xl font-black">Nexcart</span>
@@ -63,7 +63,7 @@ export function Signup() {
           <div className="space-y-8">
             <div className="grid gap-6">
               <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/20 text-blue-400">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-600/20 text-pink-400">
                   <ShieldCheck size={20} />
                 </div>
                 <div className="flex-1">
@@ -72,7 +72,7 @@ export function Signup() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/20 text-blue-400">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-600/20 text-pink-400">
                   <User size={20} />
                 </div>
                 <div className="flex-1">
@@ -113,7 +113,7 @@ export function Signup() {
                   <input
                     type="text"
                     required
-                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-blue-600 focus:bg-white focus:outline-none"
+                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-pink-600 focus:bg-white focus:outline-none"
                     placeholder="John Doe"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
@@ -127,7 +127,7 @@ export function Signup() {
                   <input
                     type="email"
                     required
-                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-blue-600 focus:bg-white focus:outline-none"
+                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-pink-600 focus:bg-white focus:outline-none"
                     placeholder="name@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -141,7 +141,7 @@ export function Signup() {
                   <input
                     type="password"
                     required
-                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-blue-600 focus:bg-white focus:outline-none"
+                    className="h-12 w-full rounded-xl border-2 bg-neutral-50 pl-12 pr-4 text-sm font-bold transition-all focus:border-pink-600 focus:bg-white focus:outline-none"
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -159,7 +159,7 @@ export function Signup() {
 
             <p className="text-center text-sm font-bold text-neutral-500">
               Already have an account?{" "}
-              <Link to="/login" className="text-blue-600 hover:underline">Login here</Link>
+              <Link to="/login" className="text-pink-600 hover:underline">Login here</Link>
             </p>
           </motion.div>
         </div>

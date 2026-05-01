@@ -121,7 +121,7 @@ export function ProductDetails() {
                 onClick={() => setSelectedImage(idx)}
                 className={cn(
                   "aspect-square overflow-hidden rounded-2xl border-2 transition-all",
-                  selectedImage === idx ? "border-blue-600 ring-2 ring-blue-500/10" : "border-neutral-200 hover:border-blue-300"
+                  selectedImage === idx ? "border-pink-600 ring-2 ring-pink-500/10" : "border-neutral-200 hover:border-pink-300"
                 )}
               >
                 <img src={img} alt="" className="h-full w-full object-cover" referrerPolicy="no-referrer" />
@@ -133,7 +133,7 @@ export function ProductDetails() {
         {/* Product Info */}
         <div className="flex flex-col">
           <div className="mb-6 flex items-center justify-between">
-            <Badge variant="primary" className="bg-blue-600 text-white">Latest Edition</Badge>
+            <Badge variant="primary" className="bg-pink-600 text-white">Latest Edition</Badge>
             <div className="flex gap-2">
               <button 
                 onClick={() => product && toggleWishlist(product.id)}
@@ -178,9 +178,9 @@ export function ProductDetails() {
             <span className="text-sm font-bold text-neutral-400">{product.numReviews} Ratings & Reviews</span>
           </div>
 
-          <div className="mb-8 p-6 rounded-3xl bg-blue-50 border border-blue-100">
+          <div className="mb-8 p-6 rounded-3xl bg-pink-50 border border-pink-100">
             <div className="flex items-baseline gap-4">
-              <span className="text-4xl font-black text-blue-600">{formatCurrency(product.price)}</span>
+              <span className="text-4xl font-black text-pink-600">{formatCurrency(product.price)}</span>
               {product.originalPrice && (
                 <span className="text-xl text-neutral-400 line-through">{formatCurrency(product.originalPrice)}</span>
               )}
@@ -254,7 +254,7 @@ export function ProductDetails() {
             <Button 
               type="button"
               size="lg" 
-              className="h-14 text-lg bg-orange-500 hover:bg-orange-600 shadow-xl shadow-orange-200 transition-all active:scale-95 group"
+              className="h-14 text-lg bg-pink-600 hover:bg-pink-700 shadow-xl shadow-pink-200 transition-all active:scale-95 group"
               onClick={(e) => handleBuyNow(e)}
             >
               <CreditCard size={20} className="mr-2 group-hover:scale-110 transition-transform" />
@@ -266,7 +266,7 @@ export function ProductDetails() {
           {/* Trust Badges */}
           <div className="mt-8 grid grid-cols-3 gap-4 border-t pt-8">
             <div className="flex flex-col items-center text-center">
-              <div className="mb-2 rounded-full bg-blue-50 p-3 text-blue-600">
+              <div className="mb-2 rounded-full bg-pink-50 p-3 text-pink-600">
                 <Truck size={24} />
               </div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600">Free Shipping</span>
@@ -278,7 +278,7 @@ export function ProductDetails() {
               <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600">100% Genuine</span>
             </div>
             <div className="flex flex-col items-center text-center">
-              <div className="mb-2 rounded-full bg-orange-50 p-3 text-orange-600">
+              <div className="mb-2 rounded-full bg-pink-50 p-3 text-pink-600">
                 <RotateCcw size={24} />
               </div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600">7 Days Return</span>
@@ -299,7 +299,7 @@ export function ProductDetails() {
           <div className="grid gap-4 sm:grid-cols-2">
             {(product.features || ["Premium Quality", "Authentic Product", "Reliable Support"]).map((feature, idx) => (
               <div key={idx} className="flex items-center gap-3 rounded-2xl bg-neutral-50 p-4">
-                <div className="h-2 w-2 rounded-full bg-blue-600" />
+                <div className="h-2 w-2 rounded-full bg-pink-600" />
                 <span className="font-bold text-neutral-700">{feature}</span>
               </div>
             ))}

@@ -46,12 +46,12 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-200">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-pink-600 text-white shadow-lg shadow-pink-200">
               <ShoppingCart size={22} className="relative z-10" />
-              <div className="absolute -left-1 -top-1 h-3 w-3 rounded-full bg-blue-400 animate-pulse" />
+              <div className="absolute -left-1 -top-1 h-3 w-3 rounded-full bg-pink-400 animate-pulse" />
             </div>
             <h1 className="text-2xl font-black tracking-tighter text-slate-900">
-              Nex<span className="text-blue-600">cart</span>
+              Nex<span className="text-pink-600">cart</span>
             </h1>
           </Link>
 
@@ -64,7 +64,7 @@ export function Navbar() {
               <input
                 type="text"
                 placeholder="Search for electronics, fashion and more..."
-                className="h-11 w-full rounded-xl border-none bg-slate-100 px-6 py-2.5 text-sm transition-all focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none font-medium"
+                className="h-11 w-full rounded-xl border-none bg-slate-100 px-6 py-2.5 text-sm transition-all focus:ring-2 focus:ring-pink-500 focus:bg-white outline-none font-medium"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -74,10 +74,10 @@ export function Navbar() {
 
           {/* Actions - Desktop */}
           <div className="hidden items-center gap-6 md:flex">
-            <Link to="/wishlist" className="text-sm font-bold tracking-tight text-slate-600 transition-colors hover:text-blue-600 uppercase">
+            <Link to="/wishlist" className="text-sm font-bold tracking-tight text-slate-600 transition-colors hover:text-pink-600 uppercase">
               Wishlist ({totalWishlistItems})
             </Link>
-            <Link to="/cart" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-tight hover:shadow-lg transition-all active:scale-95 whitespace-nowrap">
+            <Link to="/cart" className="flex items-center gap-2 bg-pink-600 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-tight hover:shadow-lg transition-all active:scale-95 whitespace-nowrap">
               <span>MY CART: {formatCurrency(subtotal)} ({totalItems})</span>
             </Link>
             <Link to="/login" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 border-2 border-white shadow-sm text-slate-600 hover:bg-slate-200 transition-colors">
@@ -108,8 +108,8 @@ export function Navbar() {
               to={item.path} 
               className={`transition-all pb-1 border-b-2 ${
                 isActive(item.path) 
-                  ? "text-blue-600 border-blue-600" 
-                  : "text-slate-500 border-transparent hover:text-blue-600"
+                  ? "text-pink-600 border-pink-600" 
+                  : "text-slate-500 border-transparent hover:text-pink-600"
               }`}
             >
               {item.name}
@@ -147,7 +147,7 @@ export function Navbar() {
                   <ShoppingCart size={24} />
                   <span className="mt-2 text-sm font-semibold">Cart</span>
                   {totalItems > 0 && (
-                    <span className="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
+                    <span className="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 text-[10px] font-bold text-white">
                       {totalItems}
                     </span>
                   )}
@@ -170,7 +170,7 @@ export function Navbar() {
                   <span className="mt-2 text-sm font-semibold">Seller</span>
                 </Link>
               </div>
-              <Link to="/login" className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 py-3 font-semibold text-white">
+              <Link to="/login" className="flex w-full items-center justify-center gap-2 rounded-lg bg-pink-600 py-3 font-semibold text-white">
                 <User size={20} />
                 <span>Login / Signup</span>
               </Link>

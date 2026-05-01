@@ -12,7 +12,7 @@ export function Home() {
       {/* Main Hero Grid */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {/* Banner Hero (8 Columns) */}
-        <div className="md:col-span-8 bg-blue-600 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden flex flex-col justify-end text-white shadow-2xl min-h-[450px] md:min-h-[550px]">
+        <div className="md:col-span-8 bg-pink-600 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden flex flex-col justify-end text-white shadow-2xl min-h-[450px] md:min-h-[550px]">
           <div className="absolute top-10 right-10 opacity-10 pointer-events-none select-none overflow-hidden">
             <div className="text-[180px] md:text-[280px] font-black leading-none -mr-20 -mt-10">NXC</div>
           </div>
@@ -25,10 +25,10 @@ export function Home() {
             <h2 className="text-5xl md:text-8xl font-black mt-6 leading-[0.85] tracking-tight">
               UP TO 45% OFF <br className="hidden md:block" /> SMART DEVICES.
             </h2>
-            <p className="mt-8 text-blue-100 text-lg font-medium max-w-md">
+            <p className="mt-8 text-pink-100 text-lg font-medium max-w-md">
               Next generation tech for your modern lifestyle. Free delivery & secure checkout enabled for all orders today.
             </p>
-            <button className="mt-10 bg-white text-blue-600 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-tight hover:scale-105 transition-all shadow-xl shadow-blue-900/20 active:scale-95">
+            <button className="mt-10 bg-white text-pink-600 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-tight hover:scale-105 transition-all shadow-xl shadow-pink-900/20 active:scale-95">
               Shop Collection
             </button>
           </motion.div>
@@ -43,11 +43,11 @@ export function Home() {
               <button className="border-2 border-white/40 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-emerald-600 transition-all">EXPLORE</button>
             </div>
           </div>
-          <div className="bg-orange-500 rounded-[2rem] p-8 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-orange-300 transition-all">
+          <div className="bg-rose-500 rounded-[2rem] p-8 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-rose-300 transition-all">
             <h3 className="text-3xl font-black leading-tight">UP TO ₹5000<br />EXCHANGE</h3>
             <div className="flex justify-between items-end">
               <span className="text-4xl font-light opacity-30 font-display">02</span>
-              <button className="border-2 border-white/40 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-orange-600 transition-all">CHECK VALUE</button>
+              <button className="border-2 border-white/40 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-rose-600 transition-all">CHECK VALUE</button>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ export function Home() {
               Limited Quantity Available
             </div>
           </div>
-          <Link to="/deals" className="text-[11px] font-black border-b-2 border-slate-900 pb-0.5 tracking-widest uppercase hover:text-blue-600 hover:border-blue-600 transition-all">VIEW ALL</Link>
+          <Link to="/deals" className="text-[11px] font-black border-b-2 border-slate-900 pb-0.5 tracking-widest uppercase hover:text-pink-600 hover:border-pink-600 transition-all">VIEW ALL</Link>
         </div>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {MOCK_PRODUCTS.filter(p => p.isFlashDeal).map((product) => (
@@ -76,7 +76,7 @@ export function Home() {
       <section className="space-y-8">
         <div className="flex justify-between items-end">
           <h4 className="text-3xl font-black tracking-tight italic uppercase text-slate-900">Trending Now</h4>
-          <Link to="/trending" className="text-[11px] font-black border-b-2 border-slate-900 pb-0.5 tracking-widest uppercase hover:text-blue-600 hover:border-blue-600 transition-all">VIEW ALL</Link>
+          <Link to="/trending" className="text-[11px] font-black border-b-2 border-slate-900 pb-0.5 tracking-widest uppercase hover:text-pink-600 hover:border-pink-600 transition-all">VIEW ALL</Link>
         </div>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {MOCK_PRODUCTS.filter(p => p.isTrending).map((product) => (
@@ -90,25 +90,25 @@ export function Home() {
       </section>
       
       {/* Featured Collection Banner */}
-      <section className="relative overflow-hidden rounded-[2.5rem] bg-indigo-600 p-8 md:p-16">
+      <section className="relative overflow-hidden rounded-[2.5rem] bg-purple-600 p-8 md:p-16">
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none select-none">
           <div className="text-[320px] font-black leading-none text-white -mr-32 -mt-10">PREM</div>
         </div>
         <div className="relative z-10 grid items-center gap-12 md:grid-cols-2">
           <div className="space-y-8">
-            <div className="flex items-center gap-2 text-indigo-200">
+            <div className="flex items-center gap-2 text-purple-200">
               <Award size={20} />
-              <span className="text-[11px] font-black uppercase tracking-widest text-indigo-100">Premium Selection</span>
+              <span className="text-[11px] font-black uppercase tracking-widest text-purple-100">Premium Selection</span>
             </div>
             <h2 className="text-5xl font-black leading-[0.9] text-white md:text-7xl tracking-tighter uppercase">
               CURATED FOR <br /> EXCELLENCE.
             </h2>
-            <p className="max-w-md text-lg font-medium text-indigo-100">
+            <p className="max-w-md text-lg font-medium text-purple-100">
               Discover unique collections from top Indian artisans and independent brands. Excellence in every stitch and circuit.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/collection">
-                <Button className="h-16 px-10 text-lg bg-white text-indigo-600 hover:scale-105 transition-transform shadow-xl shadow-indigo-900/20">
+                <Button className="h-16 px-10 text-lg bg-white text-purple-600 hover:scale-105 transition-transform shadow-xl shadow-purple-900/20">
                   Explore Collection
                 </Button>
               </Link>
