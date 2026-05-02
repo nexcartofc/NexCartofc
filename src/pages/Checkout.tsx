@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 export function Checkout() {
   const { items, totalItems, clearCart } = useCart();
   const [step, setStep] = useState(1);
-  const [paymentMethod, setPaymentMethod] = useState<string>("ONLINE");
+  const [paymentMethod, setPaymentMethod] = useState<string>("COD");
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState("");
@@ -130,26 +130,24 @@ export function Checkout() {
     const newOrderId = `NEX-${Math.floor(100000 + Math.random() * 900000)}`;
     setOrderId(newOrderId);
 
-    const productNames = items.map(item => {
+    const productDetails = items.map(item => {
       const p = MOCK_PRODUCTS.find(prod => prod.id === item.productId);
-      return `${p?.name} (x${item.quantity})`;
+      return `${p?.name || "Product"} (x${item.quantity})`;
     }).join(", ");
 
     const payload = {
       orderId: newOrderId,
       ...formData,
-      products: productNames,
+      products: productDetails,
+      productName: productDetails, // Added as a redundant field for sheet compatibility
       totalAmount: total,
-      paymentMethod: paymentMethod === "ONLINE" ? "Online Payment" : "Cash on Delivery",
+      paymentMethod: paymentMethod === "COD" ? "Cash on Delivery" : paymentMethod,
       timestamp: new Date().toISOString()
     };
 
     try {
-      // Using no-cors because Apps Script redirections can sometimes cause CORS issues in simple POSTs
-      // but we still want to fire the request. For real data validation, a proxy is better.
-      await fetch("https://script.google.com/macros/s/AKfycby6YGxvgnFlrY5txVwjF0POHSqyntCOk1t1exVk2AhE0zxDq85JNouYqXBEtXUTYKCN/exec", {
+      await fetch("/api/orders", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
@@ -360,9 +358,8 @@ export function Checkout() {
                 <h2 className="mb-8 text-2xl font-black text-neutral-900 flex items-center gap-3">
                   <CreditCard className="text-pink-600" /> Payment Method
                 </h2>
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-4">
                   {[
-                    { id: "ONLINE", label: "Pay Online (UPI, GPay, PhonePe, Paytm)", icon: Smartphone },
                     { id: "COD", label: "Cash on Delivery", icon: Banknote },
                   ].map((method) => (
                     <button
@@ -379,6 +376,12 @@ export function Checkout() {
                       <span className="font-bold text-neutral-900">{method.label}</span>
                     </button>
                   ))}
+                  
+                  <div className="mt-4 p-4 rounded-2xl bg-pink-50/50 border border-pink-100 text-pink-700">
+                    <p className="text-xs font-bold leading-relaxed">
+                      💡 Our team will contact you on WhatsApp to confirm your order and payment details.
+                    </p>
+                  </div>
                 </div>
                 <div className="mt-8 flex gap-4">
                   <Button variant="ghost" className="h-14 px-8 text-lg font-bold" onClick={() => setStep(1)}>Back</Button>
@@ -418,8 +421,9 @@ export function Checkout() {
                       <div>
                         <p className="text-xs font-black uppercase text-neutral-400">Payment via</p>
                         <p className="font-bold text-neutral-900">
-                          {paymentMethod === "ONLINE" ? "Pay Online (UPI/GPay/PhonePe)" : "Cash on Delivery"}
+                          Cash on Delivery
                         </p>
+                        <p className="text-[10px] font-bold text-pink-600 mt-1">Our team will contact you on WhatsApp to confirm.</p>
                       </div>
                     </div>
                     <Button variant="ghost" size="sm" className="text-pink-600" onClick={() => setStep(2)}>Change</Button>
