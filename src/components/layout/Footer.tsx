@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ShoppingCart } from "lucide-react";
-import { APP_NAME } from "../../constants";
+import { Facebook, Instagram, Mail, Phone, ShoppingCart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -18,11 +17,10 @@ export function Footer() {
               </h1>
             </Link>
             <p className="max-w-xs text-sm font-medium leading-relaxed text-slate-500">
-              India's fastest growing multi-vendor eCommerce platform. 
-              Bringing quality products from top sellers directly to your doorstep.
+              Your trusted online store for fashion, lifestyle & more. Quality products delivered straight to your doorstep.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
+              {[Facebook, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="rounded-xl bg-slate-100 p-3 text-slate-600 transition-all hover:bg-pink-600 hover:text-white hover:-translate-y-1">
                   <Icon size={18} />
                 </a>
@@ -37,8 +35,6 @@ export function Footer() {
                 { name: "All Products", to: "/products" },
                 { name: "Trending Now", to: "/trending" },
                 { name: "New Arrivals", to: "/deals" },
-                { name: "Flash Deals", to: "/deals" },
-                { name: "Premium Collection", to: "/collection" },
               ]
             },
             {
@@ -46,9 +42,7 @@ export function Footer() {
               links: [
                 { name: "Track Order", to: "/orders" },
                 { name: "Shipping Policy", to: "#" },
-                { name: "Return & Refunds", to: "#" },
                 { name: "Help Center", to: "#" },
-                { name: "Become a Seller", to: "/seller" },
               ]
             }
           ].map((section, idx) => (
@@ -74,7 +68,7 @@ export function Footer() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600">
                   <Mail size={18} />
                 </div>
-                <a href="mailto:nexcart.ofc@gmail.com" className="tracking-tight hover:text-pink-600 transition-colors">nexcart.ofc@gmail.com</a>
+                <a href="mailto:nexcart.ofc@gmail.com" className="tracking-tight hover:text-pink-600 transition-colors lowercase">nexcart.ofc@gmail.com</a>
               </li>
               <li className="flex items-center gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600">
@@ -82,29 +76,21 @@ export function Footer() {
                 </div>
                 <span className="tracking-tight">+91 1800-NEX-CART</span>
               </li>
-              <li className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600 shrink-0">
-                  <MapPin size={18} />
-                </div>
-                <span className="tracking-tight leading-tight pt-2">123 eCommerce Lane, Tech Hub, Bangalore, India</span>
-              </li>
             </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Status Bar */}
-      <div className="bg-slate-900 text-white px-4 md:px-8 py-4 flex flex-col md:flex-row items-center justify-between text-[10px] font-bold uppercase tracking-[0.2em]">
-        <div className="flex gap-8 mb-4 md:mb-0">
-          <Link to="/seller" className="hover:text-pink-400 transition-colors">Become a Seller</Link>
-          <Link to="/admin" className="hover:text-pink-400 transition-colors">Admin Dashboard</Link>
-          <Link to="/track" className="hover:text-pink-400 transition-colors">Order Tracking</Link>
-        </div>
-        <div className="flex items-center gap-6">
-          <span className="text-slate-500 italic uppercase tracking-normal">Secure Payments: UPI / COD / WALLET</span>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="text-slate-300">System Status: Online</span>
+        {/* Delivery Disclaimer */}
+        <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col items-center gap-4 text-center">
+          <div className="bg-pink-50/50 border-2 border-dashed border-pink-200 rounded-2xl px-6 py-4 max-w-2xl">
+            <p className="text-xs md:text-sm font-bold text-slate-600 flex items-center justify-center gap-2">
+              <span>🚚</span>
+              Orders are delivered by trusted third-party logistics partners. Package branding may vary.
+            </p>
+          </div>
+          
+          <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+            © 2026 Nexcart. All rights reserved.
           </div>
         </div>
       </div>

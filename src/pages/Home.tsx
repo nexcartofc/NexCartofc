@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Zap, Flame, Award } from "lucide-react";
 import { Product } from "../types";
 import { Button } from "../components/ui/Button";
+import { Testimonials } from "../components/sections/Testimonials";
 
 export function Home() {
   return (
@@ -12,55 +13,74 @@ export function Home() {
       {/* Main Hero Grid */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {/* Banner Hero (8 Columns) */}
-        <div className="md:col-span-8 bg-pink-600 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden flex flex-col justify-end text-white shadow-2xl min-h-[450px] md:min-h-[550px]">
-          <div className="absolute top-10 right-10 opacity-10 pointer-events-none select-none overflow-hidden">
-            <div className="text-[180px] md:text-[280px] font-black leading-none -mr-20 -mt-10">NXC</div>
+        <div className="md:col-span-8 bg-pink-600 rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden flex flex-col justify-end text-white shadow-2xl min-h-[280px] md:min-h-[380px]">
+          {/* Texture Overlays */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '32px 32px' }}></div>
+          
+          {/* Repeating Nexcart Typography Pattern */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none flex flex-col font-black text-white italic overflow-hidden rotate-[-12deg] scale-150">
+            {[...Array(10)].map((_, i) => (
+              <div key={i} className="whitespace-nowrap text-6xl md:text-8xl leading-none tracking-tighter">
+                NEXCART NEXCART NEXCART NEXCART NEXCART NEXCART
+              </div>
+            ))}
+          </div>
+
+          <div className="absolute top-10 right-10 opacity-10 pointer-events-none select-none overflow-hidden text-white/20">
+            <div className="text-[100px] md:text-[160px] font-black leading-none -mr-8 -mt-8">NXC</div>
           </div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="relative z-10"
           >
-            <span className="bg-yellow-400 text-slate-900 px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-tight">Special Offer</span>
-            <h2 className="text-5xl md:text-8xl font-black mt-6 leading-[0.85] tracking-tight">
-              UP TO 45% OFF <br className="hidden md:block" /> SMART DEVICES.
+            <span className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.1em] text-pink-100/80 block mb-3">WELCOME TO NEXCART</span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight max-w-xl">
+              Fresh Styles, <br /> Free Delivery — <br /> Shop Now!
             </h2>
-            <p className="mt-8 text-pink-100 text-lg font-medium max-w-md">
-              Next generation tech for your modern lifestyle. Free delivery & secure checkout enabled for all orders today.
+            <p className="mt-4 text-white text-sm md:text-lg font-medium max-w-[340px] md:max-w-lg">
+              Handpicked fashion & lifestyle products delivered to your door.
             </p>
-            <button className="mt-10 bg-white text-pink-600 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-tight hover:scale-105 transition-all shadow-xl shadow-pink-900/20 active:scale-95">
-              Shop Collection
+            <button className="mt-8 bg-white text-pink-600 px-10 py-4 rounded-full font-bold text-sm md:text-base uppercase tracking-tight hover:scale-105 transition-all shadow-xl active:scale-95">
+              SHOP COLLECTION
             </button>
           </motion.div>
         </div>
 
         {/* Side Feature Tiles (4 Columns) */}
         <div className="md:col-span-4 flex flex-col gap-6">
-          <div className="bg-emerald-500 rounded-[2rem] p-8 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-emerald-300 transition-all">
-            <h3 className="text-3xl font-black leading-tight">FASHION WEEK<br />LIVE NOW</h3>
+          <div className="bg-emerald-500 rounded-[2rem] p-6 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-emerald-300 transition-all">
+            <div className="space-y-2">
+              <h3 className="text-xl md:text-2xl font-black leading-tight uppercase font-display">New<br />Arrivals<br />Every Week</h3>
+              <p className="text-[10px] md:text-xs font-bold text-emerald-100 opacity-90">Fresh trendy styles added weekly!</p>
+            </div>
             <div className="flex justify-between items-end">
-              <span className="text-5xl font-light opacity-30 font-display">01</span>
-              <button className="border-2 border-white/40 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-emerald-600 transition-all">EXPLORE</button>
+              <span className="text-3xl font-light opacity-30 font-display">01</span>
+              <button className="border-2 border-white/40 px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-emerald-600 transition-all">EXPLORE</button>
             </div>
           </div>
-          <div className="bg-rose-500 rounded-[2rem] p-8 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-rose-300 transition-all">
-            <h3 className="text-3xl font-black leading-tight">UP TO ₹5000<br />EXCHANGE</h3>
+          <div className="bg-rose-500 rounded-[2rem] p-6 flex-1 flex flex-col justify-between text-white shadow-xl group border-4 border-transparent hover:border-rose-300 transition-all">
+            <div className="space-y-2">
+              <h3 className="text-xl md:text-2xl font-black leading-tight uppercase font-display">Order Via<br />WhatsApp<br />Easily</h3>
+              <p className="text-[10px] md:text-xs font-bold text-rose-100 opacity-90">Fast replies & quick delivery guaranteed!</p>
+            </div>
             <div className="flex justify-between items-end">
-              <span className="text-4xl font-light opacity-30 font-display">02</span>
-              <button className="border-2 border-white/40 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-rose-600 transition-all">CHECK VALUE</button>
+              <span className="text-3xl font-light opacity-30 font-display">02</span>
+              <button className="border-2 border-white/40 px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-rose-600 transition-all">ORDER NOW</button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Flash Deals */}
+      {/* New Arrivals */}
       <section className="space-y-8">
         <div className="flex justify-between items-end">
           <div>
-            <h4 className="text-3xl font-black tracking-tight italic uppercase text-slate-900">Flash Deals</h4>
-            <div className="flex items-center gap-2 text-red-500 font-bold text-xs uppercase tracking-widest mt-1">
-              <span className="inline-block h-2 w-2 rounded-full bg-red-500" />
-              Limited Quantity Available
+            <h4 className="text-3xl font-black tracking-tight italic uppercase text-slate-900">New Arrivals</h4>
+            <div className="flex items-center gap-2 text-pink-500 font-bold text-xs uppercase tracking-widest mt-1">
+              <span className="inline-block h-2 w-2 rounded-full bg-pink-500" />
+              Fresh products added every week!
             </div>
           </div>
           <Link to="/deals" className="text-[11px] font-black border-b-2 border-slate-900 pb-0.5 tracking-widest uppercase hover:text-pink-600 hover:border-pink-600 transition-all">VIEW ALL</Link>
@@ -124,6 +144,9 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
     </div>
   );
 }

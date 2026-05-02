@@ -53,11 +53,6 @@ export function ProductCard({ product }: ProductCardProps) {
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
-        {discount > 0 && (
-          <div className="absolute left-3 top-3 rounded-lg bg-red-500 px-3 py-1 text-[10px] font-black text-white uppercase tracking-tighter shadow-sm z-10">
-            -{discount}%
-          </div>
-        )}
         {product.isNew && (
           <div className="absolute left-3 bottom-3 rounded-lg bg-pink-600 px-3 py-1 text-[10px] font-black text-white uppercase tracking-tighter shadow-sm z-10 animate-in fade-in zoom-in duration-500">
             NEW
