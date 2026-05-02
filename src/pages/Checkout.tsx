@@ -146,8 +146,11 @@ export function Checkout() {
     };
 
     try {
-      await fetch("/api/orders", {
+      // Using no-cors because Apps Script redirections can sometimes cause CORS issues in simple POSTs
+      // but we still want to fire the request. For real data validation, a proxy is better.
+      await fetch("https://script.google.com/macros/s/AKfycby6YGxvgnFlrY5txVwjF0POHSqyntCOk1t1exVk2AhE0zxDq85JNouYqXBEtXUTYKCN/exec", {
         method: "POST",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
