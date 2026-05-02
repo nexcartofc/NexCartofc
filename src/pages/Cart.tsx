@@ -24,9 +24,9 @@ export function Cart() {
   });
 
   const subtotal = cartProducts.reduce((sum, item) => sum + (item.details.price * item.quantity), 0);
-  const shippingCharge = subtotal > 10000 ? 0 : 500;
-  const tax = Math.round(subtotal * 0.18); // 18% GST
-  const total = subtotal + shippingCharge + tax;
+  const shippingCharge = 0;
+  const tax = 0; // Removed GST
+  const total = subtotal;
 
   if (items.length === 0) {
     return (
@@ -128,14 +128,8 @@ export function Cart() {
               <span>{formatCurrency(subtotal)}</span>
             </div>
             <div className="flex justify-between text-neutral-500">
-              <span>Shipping Charge</span>
-              <span className={shippingCharge === 0 ? "text-green-600" : ""}>
-                {shippingCharge === 0 ? "FREE" : formatCurrency(shippingCharge)}
-              </span>
-            </div>
-            <div className="flex justify-between text-neutral-500">
-              <span>Estimated GST (18%)</span>
-              <span>{formatCurrency(tax)}</span>
+              <span>Delivery Charges</span>
+              <span className="text-green-600">FREE!</span>
             </div>
             <div className="border-t pt-4 flex justify-between text-xl font-black text-neutral-900">
               <span>Total Pay</span>

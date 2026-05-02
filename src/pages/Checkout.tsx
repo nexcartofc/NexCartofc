@@ -115,13 +115,13 @@ export function Checkout() {
       const product = MOCK_PRODUCTS.find(p => p.id === item.productId);
       return sum + (product?.price || 0) * item.quantity;
     }, 0);
-    const ship = sub > 10000 || sub === 0 ? 0 : 500;
-    const t = Math.round(sub * 0.18);
+    const ship = 0;
+    const t = 0;
     return {
       subtotal: sub,
       shippingCharge: ship,
       tax: t,
-      total: sub + ship + t,
+      total: sub,
     };
   }, [items]);
 
@@ -453,13 +453,7 @@ export function Checkout() {
             </div>
             <div className="flex justify-between text-sm font-bold text-neutral-500">
               <span>Delivery Charges</span>
-              <span className={cn("font-black tracking-tighter", shippingCharge === 0 ? "text-green-600" : "text-neutral-900")}>
-                {shippingCharge === 0 ? "FREE" : formatCurrency(shippingCharge)}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm font-bold text-neutral-500">
-              <span>GST (18%)</span>
-              <span>{formatCurrency(tax)}</span>
+              <span className="font-black tracking-tighter text-green-600">FREE!</span>
             </div>
             <div className="flex justify-between border-t border-dashed pt-4 text-xl font-black text-neutral-900">
               <span>Total Amount</span>
